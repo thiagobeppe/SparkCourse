@@ -4,11 +4,11 @@ import java.nio.charset.CodingErrorAction
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
-
 import scala.io.{Codec, Source}
 
-
 object findMostPopNicer extends  App{
+
+  //Function to map a id by the name of the movie
   def loadMoviesName(): Map[Int, String] = {
     implicit val codec = Codec("UTF-8")
     codec.onMalformedInput(CodingErrorAction.REPLACE)
